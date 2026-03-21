@@ -1,1 +1,342 @@
-rules for the Endless Craft Minecraft server
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>EndlessCraft – Regeln</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: radial-gradient(circle at top, #2b2b3f, #12121a);
+    color: #f1f1f1;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.6em;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+/* TOP BAR */
+.top-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.search {
+    flex: 1;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    font-size: 1em;
+}
+
+.team-btn {
+    padding: 14px 20px;
+    border-radius: 14px;
+    border: none;
+    background: #6c5ce7;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.team-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(108,92,231,.6);
+}
+
+/* CATEGORY */
+.category {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    color: #bdbdfc;
+}
+
+/* RULE */
+.rule {
+    background: linear-gradient(135deg, #1f1f2e, #191926);
+    border-radius: 16px;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+
+.rule-header {
+    padding: 18px 22px;
+    font-size: 1.15em;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrow {
+    transition: transform .3s;
+}
+
+.rule.open .arrow {
+    transform: rotate(90deg);
+}
+
+.rule-content {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: max-height .35s ease, opacity .25s ease, transform .25s ease;
+    padding: 0 22px;
+}
+
+.rule.open .rule-content {
+    max-height: 300px;
+    opacity: 1;
+    transform: translateY(0);
+    padding-bottom: 16px;
+}
+
+.rule-content p {
+    margin: 6px 0;
+    color: #ddd;
+}
+
+/* TEAM MODAL */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-card {
+    background: #1b1b2a;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 420px;
+    animation: teamIn .4s ease;
+}
+
+@keyframes teamIn {
+    from { opacity: 0; transform: translateY(40px) scale(.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.close {
+    cursor: pointer;
+    font-size: 1.4em;
+}
+
+.team-member {
+    background: rgba(255,255,255,.06);
+    padding: 14px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+}
+
+.role {
+    font-size: .9em;
+    color: #bdbdfc;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #888;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>🌍 EndlessCraft</h1>
+<div class="subtitle">Public CraftAttack • Stay Chill</div>
+
+<div class="top-bar">
+    <input class="search" id="search" placeholder="🔍 Regel suchen...">
+    <button class="team-btn" id="openTeam">👥 Team</button>
+</div>
+
+<!-- GAMEPLAY -->
+<div class="category">🎮 Gameplay</div>
+
+<div class="rule"><div class="rule-header">🎧 Please play chill <span class="arrow">›</span></div><div class="rule-content">
+<p>Bleib entspannt und fair.</p>
+<p>Kein Drama.</p>
+<p>Wir spielen zum Spaß.</p>
+</div></div>
+
+<div class="rule"><div class="rule-header">🔥 CraftAttack-Style Gameplay <span class="arrow">›</span></div><div class="rule-content">
+<p>Gameplay wie CraftAttack.</p>
+<p>Frei, aber geregelt.</p>
+<p>Kein Pay2Win.</p>
+</div></div>
+
+<div class="rule"><div class="rule-header">⚔️ PvP & Pranks <span class="arrow">›</span></div><div class="rule-content">
+<p>PvP & Pranks erlaubt.</p>
+<p>Nur im gleichen Maß.</p>
+<p>Nicht übertreiben.</p>
+</div></div>
+
+<div class="rule"><div class="rule-header">🧱 Respektiere Builds <span class="arrow">›</span></div><div class="rule-content">
+<p>Keine fremden Builds anfassen.</p>
+<p>Auch nichts abbauen.</p>
+<p>Frag vorher.</p>
+</div></div>
+
+<div class="rule"><div class="rule-header">⚙️ Redstone & Lag <span class="arrow">›</span></div><div class="rule-content">
+<p>Keine Lag-Maschinen.</p>
+<p>Redstone mit Verstand.</p>
+<p>Bei Problemen abbauen.</p>
+</div></div>
+
+<div class="rule"><div class="rule-header">🌾 AFK & Farmen <span class="arrow">›</span></div><div class="rule-content">
+<p>AFK nur im Rahmen.</p>
+<p>Keine Serverlast.</p>
+<p>Automatik nicht übertreiben.</p>
+</div></div>
+
+<div class="rule"><div class="rule-header">💰 Shops & Handel <span class="arrow">›</span></div><div class="rule-content">
+<p>Keine Scams.</p>
+<p>Faire Preise.</p>
+<p>Deals sind bindend.</p>
+</div></div>
+
+<!-- DISCORD -->
+<div class="category">💬 Discord & Community</div>
+
+<div class="rule"><div class="rule-header">🛡️ Safespace im Discord <span class="arrow">›</span></div><div class="rule-content">
+<p>Safespace nur per Ticket.</p>
+<p>Keine öffentlichen Diskussionen.</p>
+<p>Respekt first.</p>
+</div></div>
+
+<div class="rule"><div class="rule-header">💬 Chat & Sprache <span class="arrow">›</span></div><div class="rule-content">
+<p>Kein Hate.</p>
+<p>Keine Beleidigungen.</p>
+<p>Bleib respektvoll.</p>
+</div></div>
+
+<div class="rule"><div class="rule-header">🎉 Events & Community <span class="arrow">›</span></div><div class="rule-content">
+<p>Events fair halten.</p>
+<p>Kein Sabotieren.</p>
+<p>Community zählt.</p>
+</div></div>
+
+<!-- FAIRPLAY -->
+<div class="category">⚖️ Fairplay</div>
+
+<div class="rule"><div class="rule-header">🚫 No Cheating <span class="arrow">›</span></div><div class="rule-content">
+<p>Keine Hacks.</p>
+<p>Kein X-Ray.</p>
+<p>Fairplay Pflicht.</p>
+</div></div>
+
+<div class="rule"><div class="rule-header">🐛 No Exploits <span class="arrow">›</span></div><div class="rule-content">
+<p>Keine Bugs nutzen.</p>
+<p>Auch nicht kurz.</p>
+<p>Exploits melden.</p>
+</div></div>
+
+<div class="rule"><div class="rule-header">👥 Alt-Accounts <span class="arrow">›</span></div><div class="rule-content">
+<p>Alts nur mit Erlaubnis.</p>
+<p>Kein Vorteil.</p>
+<p>Missbrauch = Strafe.</p>
+</div></div>
+
+<!-- MODERATION -->
+<div class="category">🛠️ Moderation</div>
+
+<div class="rule"><div class="rule-header">📹 Regelverstöße melden <span class="arrow">›</span></div><div class="rule-content">
+<p>Regelbruch clippen.</p>
+<p>In den Warteraum.</p>
+<p>Team wertet aus.</p>
+</div></div>
+
+<div class="rule"><div class="rule-header">🛠️ Mods <span class="arrow">›</span></div><div class="rule-content">
+<p>Mods sind keine Engel.</p>
+<p>Hilfe freiwillig.</p>
+<p>Kein Anspruch.</p>
+</div></div>
+
+<div class="rule"><div class="rule-header">⚖️ Moderationsentscheidungen <span class="arrow">›</span></div><div class="rule-content">
+<p>Entscheidungen sind bindend.</p>
+<p>Keine öffentlichen Diskussionen.</p>
+<p>Team hat letztes Wort.</p>
+</div></div>
+
+<div class="rule"><div class="rule-header">🚨 NO ADMIN ABUSE <span class="arrow">›</span></div><div class="rule-content">
+<p>Keine Vorteile.</p>
+<p>Keine Willkür.</p>
+<p>Missbrauch wird bestraft.</p>
+</div></div>
+
+<div class="footer">EndlessCraft • Stay Chill ✨</div>
+</div>
+
+<!-- TEAM MODAL -->
+<div class="modal" id="teamModal">
+<div class="modal-card">
+<div class="modal-header">
+<h2>👥 Team</h2>
+<div class="close" id="closeTeam">✖</div>
+</div>
+
+<div class="team-member"><strong>Kobi</strong><div class="role">Admin</div></div>
+<div class="team-member"><strong>Lou</strong><div class="role">Admin</div></div>
+<div class="team-member"><strong>Eric</strong><div class="role">Moderator</div></div>
+<div class="team-member"><strong>sekuno</strong><div class="role">Moderator</div></div>
+
+</div>
+</div>
+
+<script>
+document.querySelectorAll('.rule-header').forEach(h => {
+    h.onclick = () => h.parentElement.classList.toggle('open');
+});
+
+document.getElementById('search').oninput = e => {
+    const v = e.target.value.toLowerCase();
+    document.querySelectorAll('.rule').forEach(r => {
+        r.style.display = r.innerText.toLowerCase().includes(v) ? "block" : "none";
+    });
+};
+
+const modal = document.getElementById('teamModal');
+openTeam.onclick = () => modal.classList.add('show');
+closeTeam.onclick = () => modal.classList.remove('show');
+modal.onclick = e => e.target === modal && modal.classList.remove('show');
+</script>
+
+</body>
+</html>
