@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EndlessCraft – Regeln</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'monospace']
+                    },
+                    colors: {
+                        ec: {
+                            bg: '#1e1e1e',
+                            panel: '#252525',
+                            panelHover: '#2c2c2c',
+                            blue: '#27A3F5',
+                            blueLight: '#8FCFFA'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="min-h-screen bg-ec-bg font-mono text-[#f1f1f1] antialiased">
+    <main class="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-10">
+        <!-- Header -->
+        <header class="mb-8 text-center sm:mb-10">
+            <a href="index.html" class="inline-block rounded-lg text-3xl font-bold tracking-tight transition duration-200 hover:text-ec-blue sm:text-4xl">
+                🌍 EndlessCraft
+            </a>
+            <p class="mt-3 text-sm text-neutral-400 sm:text-base">Public CraftAttack • Stay Chill</p>
+        </header>
+
+        <!-- Search and team button -->
+        <div class="mb-8 flex flex-col gap-3 sm:flex-row">
+            <label class="relative block min-w-0 flex-1">
+                <span class="sr-only">Regeln suchen</span>
+                <span class="pointer-events-none absolute inset-y-0 left-4 flex items-center text-neutral-400">⌕</span>
+                <input
+                    class="w-full rounded-xl border border-white/10 bg-[#252525] py-3.5 pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-neutral-500 focus:border-ec-blue focus:ring-2 focus:ring-ec-blue/20 sm:text-base"
+                    id="search"
+                    type="search"
+                    placeholder="Regel suchen..."
+                    autocomplete="off"
+                >
+            </label>
+            <button
+                class="rounded-xl bg-ec-blue px-5 py-3.5 text-sm font-bold text-[#101820] shadow-lg shadow-sky-950/20 transition duration-200 hover:-translate-y-0.5 hover:bg-ec-blueLight hover:shadow-sky-500/20 focus:outline-none focus:ring-2 focus:ring-ec-blue focus:ring-offset-2 focus:ring-offset-ec-bg sm:text-base"
+                id="openTeam"
+                type="button"
+            >👥 Team</button>
+        </div>
+
+        <p id="noResults" class="mb-6 hidden rounded-xl border border-white/10 bg-ec-panel p-5 text-center text-sm text-neutral-400">
+            Keine passenden Regeln gefunden.
+        </p>
+
+        <!-- Gameplay -->
+        <section class="rule-section mb-9" aria-labelledby="gameplay-heading">
+            <h2 id="gameplay-heading" class="mb-4 flex items-center gap-3 text-lg font-bold text-ec-blue sm:text-xl">
+                <span>🎮</span> Gameplay
+                <span class="h-px flex-1 bg-white/10"></span>
+            </h2>
+
+            <div class="rule-list space-y-3">
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false">
+                        <span>🎧 Please play chill</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span>
+                    </button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6">
+                        <p>Bleib entspannt und fair.</p><p>Kein Drama.</p><p>Wir spielen zum Spaß.</p>
+                    </div>
+                </article>
+
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false">
+                        <span>🔥 CraftAttack-Style Gameplay</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span>
+                    </button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6">
+                        <p>Gameplay wie CraftAttack.</p><p>Frei, aber geregelt.</p><p>Kein Pay2Win.</p>
+                    </div>
+                </article>
+
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false">
+                        <span>⚔️ PvP &amp; Pranks</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span>
+                    </button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6">
+                        <p>PvP &amp; Pranks erlaubt.</p><p>Nur im gleichen Maß.</p><p>Nicht übertreiben.</p>
+                    </div>
+                </article>
+
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false">
+                        <span>🧱 Respektiere Builds</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span>
+                    </button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6">
+                        <p>Keine fremden Builds anfassen.</p><p>Auch nichts abbauen.</p><p>Frag vorher.</p>
+                    </div>
+                </article>
+
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false">
+                        <span>⚙️ Redstone &amp; Lag</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span>
+                    </button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6">
+                        <p>Keine Lag-Maschinen.</p><p>Redstone mit Verstand.</p><p>Bei Problemen abbauen.</p>
+                    </div>
+                </article>
+
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false">
+                        <span>🌾 AFK &amp; Farmen</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span>
+                    </button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6">
+                        <p>AFK nur im Rahmen.</p><p>Keine Serverlast.</p><p>Automatik nicht übertreiben.</p>
+                    </div>
+                </article>
+
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false">
+                        <span>💰 Shops &amp; Handel</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span>
+                    </button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6">
+                        <p>Keine Scams.</p><p>Faire Preise.</p><p>Deals sind bindend.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Discord -->
+        <section class="rule-section mb-9" aria-labelledby="discord-heading">
+            <h2 id="discord-heading" class="mb-4 flex items-center gap-3 text-lg font-bold text-ec-blue sm:text-xl">
+                <span>💬</span> Discord &amp; Community
+                <span class="h-px flex-1 bg-white/10"></span>
+            </h2>
+            <div class="rule-list space-y-3">
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false">
+                        <span>🛡️ Safespace im Discord</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span>
+                    </button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6"><p>Safespace nur per Ticket.</p><p>Keine öffentlichen Diskussionen.</p><p>Respekt first.</p></div>
+                </article>
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false">
+                        <span>💬 Chat &amp; Sprache</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span>
+                    </button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6"><p>Kein Hate.</p><p>Keine Beleidigungen.</p><p>Bleib respektvoll.</p></div>
+                </article>
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false">
+                        <span>🎉 Events &amp; Community</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span>
+                    </button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6"><p>Events fair halten.</p><p>Kein Sabotieren.</p><p>Community zählt.</p></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Fairplay -->
+        <section class="rule-section mb-9" aria-labelledby="fairplay-heading">
+            <h2 id="fairplay-heading" class="mb-4 flex items-center gap-3 text-lg font-bold text-ec-blue sm:text-xl">
+                <span>⚖️</span> Fairplay
+                <span class="h-px flex-1 bg-white/10"></span>
+            </h2>
+            <div class="rule-list space-y-3">
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false"><span>🚫 No Cheating</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span></button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6"><p>Keine Hacks.</p><p>Kein X-Ray.</p><p>Fairplay Pflicht.</p></div>
+                </article>
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false"><span>🐛 No Exploits</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span></button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6"><p>Keine Bugs nutzen.</p><p>Auch nicht kurz.</p><p>Exploits melden.</p></div>
+                </article>
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false"><span>👥 Alt-Accounts</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span></button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6"><p>Alts nur mit Erlaubnis.</p><p>Kein Vorteil.</p><p>Missbrauch = Strafe.</p></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Moderation -->
+        <section class="rule-section mb-9" aria-labelledby="moderation-heading">
+            <h2 id="moderation-heading" class="mb-4 flex items-center gap-3 text-lg font-bold text-ec-blue sm:text-xl">
+                <span>🛠️</span> Moderation
+                <span class="h-px flex-1 bg-white/10"></span>
+            </h2>
+            <div class="rule-list space-y-3">
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false"><span>📹 Regelverstöße melden</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span></button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6"><p>Regelbruch clippen.</p><p>In den Warteraum.</p><p>Team wertet aus.</p></div>
+                </article>
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false"><span>🛠️ Mods</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span></button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6"><p>Mods sind keine Engel.</p><p>Hilfe freiwillig.</p><p>Kein Anspruch.</p></div>
+                </article>
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false"><span>⚖️ Moderationsentscheidungen</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span></button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6"><p>Entscheidungen sind bindend.</p><p>Keine öffentlichen Diskussionen.</p><p>Team hat letztes Wort.</p></div>
+                </article>
+                <article class="rule overflow-hidden rounded-xl border border-white/[0.07] bg-ec-panel shadow-lg shadow-black/10 transition hover:border-white/15">
+                    <button class="rule-header flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-semibold transition hover:bg-white/[0.03] sm:px-6" type="button" aria-expanded="false"><span>🚨 NO ADMIN ABUSE</span><span class="arrow text-xl text-ec-blue transition-transform duration-300">›</span></button>
+                    <div class="rule-content hidden px-5 pb-5 text-sm leading-7 text-neutral-300 sm:px-6"><p>Keine Vorteile.</p><p>Keine Willkür.</p><p>Missbrauch wird bestraft.</p></div>
+                </article>
+            </div>
+        </section>
+
+        <footer class="border-t border-white/10 pt-6 text-center text-xs text-neutral-500 sm:text-sm">
+            EndlessCraft <span class="px-1 text-ec-blue">•</span> Stay Chill ✨
+        </footer>
+    </main>
+
+    <!-- Team Modal -->
+    <div class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 p-4 backdrop-blur-sm" id="teamModal" role="dialog" aria-modal="true" aria-labelledby="teamTitle">
+        <div class="w-full max-w-md rounded-2xl border border-white/10 bg-[#222222] p-6 shadow-2xl shadow-black/40 sm:p-8">
+            <div class="mb-6 flex items-center justify-between">
+                <h2 class="text-xl font-bold" id="teamTitle">👥 Team</h2>
+                <button class="rounded-lg px-2 py-1 text-xl text-neutral-400 transition hover:bg-white/10 hover:text-white" id="closeTeam" type="button" aria-label="Team-Fenster schließen">✕</button>
+            </div>
+            <div class="space-y-3">
+                <div class="rounded-xl border border-white/5 bg-white/[0.04] p-4"><strong>Kobi</strong><p class="mt-1 text-sm text-ec-blueLight">Admin</p></div>
+                <div class="rounded-xl border border-white/5 bg-white/[0.04] p-4"><strong>Lou</strong><p class="mt-1 text-sm text-ec-blueLight">Co-Admin</p></div>
+                <div class="rounded-xl border border-white/5 bg-white/[0.04] p-4"><strong>Eric</strong><p class="mt-1 text-sm text-ec-blueLight">Moderator</p></div>
+                <div class="rounded-xl border border-white/5 bg-white/[0.04] p-4"><strong>sekuno</strong><p class="mt-1 text-sm text-ec-blueLight">Moderator</p></div>
+                <div class="rounded-xl border border-white/5 bg-white/[0.04] p-4"><strong>Janis</strong><p class="mt-1 text-sm text-ec-blueLight">Moderator</p></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Regeln auf- und zuklappen
+        document.querySelectorAll('.rule-header').forEach((button) => {
+            button.addEventListener('click', () => {
+                const rule = button.closest('.rule');
+                const content = rule.querySelector('.rule-content');
+                const isOpening = content.classList.contains('hidden');
+
+                content.classList.toggle('hidden', !isOpening);
+                button.setAttribute('aria-expanded', String(isOpening));
+                button.querySelector('.arrow').classList.toggle('rotate-90', isOpening);
+            });
+        });
+
+        // Regeln durchsuchen
+        const searchInput = document.getElementById('search');
+        const noResults = document.getElementById('noResults');
+
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.trim().toLocaleLowerCase('de');
+            let visibleRules = 0;
+
+            document.querySelectorAll('.rule-section').forEach((section) => {
+                let sectionHasVisibleRule = false;
+
+                section.querySelectorAll('.rule').forEach((rule) => {
+                    const matches = rule.innerText.toLocaleLowerCase('de').includes(query);
+                    rule.classList.toggle('hidden', !matches);
+                    if (matches) {
+                        visibleRules++;
+                        sectionHasVisibleRule = true;
+                    }
+                });
+
+                section.classList.toggle('hidden', !sectionHasVisibleRule);
+            });
+
+            noResults.classList.toggle('hidden', visibleRules !== 0);
+        });
+
+        // Team-Modal öffnen und schließen
+        const modal = document.getElementById('teamModal');
+        const openTeamButton = document.getElementById('openTeam');
+        const closeTeamButton = document.getElementById('closeTeam');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            closeTeamButton.focus();
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            openTeamButton.focus();
+        }
+
+        openTeamButton.addEventListener('click', openModal);
+        closeTeamButton.addEventListener('click', closeModal);
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) closeModal();
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

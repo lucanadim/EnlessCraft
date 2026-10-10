@@ -1,0 +1,370 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>luca nadim</title>
+        <link rel="website icon" type="png" href="">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            .pixel-image {
+                image-rendering: pixelated;
+                image-rendering: crisp-edges;
+            }
+
+            #modalImage {
+                transform-origin: center center;
+                will-change: transform;
+                cursor: zoom-in;
+                transition: none;
+                image-rendering: pixelated;
+                image-rendering: crisp-edges;
+                image-rendering: -moz-crisp-edges;
+            }
+
+            #modalImage.zoomed { cursor: grab; }
+            #modalImage.zoomed:active { cursor: grabbing; }
+        </style>
+    </head>
+    <body class="bg-[#1e1e1e] font-['JetBrains_Mono']">
+        <main class="relative mx-auto mt-6 max-w-2xl px-4 sm:px-6">
+            <nav class="flex flex-wrap items-center justify-between gap-y-2">
+                <a href="index.html" class="inline-block" aria-label="Zur Homepage">
+                    <img
+                        src="assets/Endless Craft Title.png"
+                        class="h-16 w-auto py-1"
+                        alt="Endless Craft Logo">
+                </a>
+                <div class="flex gap-1">
+                    <a class="font-normal text-sm sm:text-base text-[#27A3F5] px-2 py-1 transition duration-300 ease-in-out hover:underline underline-offset-2 hover:text-[#8FCFFA]"
+                       href="servers.html">
+                        servers
+                    </a>
+                    <a class="font-normal text-sm sm:text-base text-[#27A3F5] px-2 py-1 transition duration-300 ease-in-out hover:underline underline-offset-2 hover:text-[#8FCFFA]"
+                       href="rules.html">
+                        rules
+                    </a>
+                </div>
+            </nav>
+
+            <div class="bg-[#303030] mt-6 mb-2 rounded-2xl flex flex-col p-5 shadow-xl outline outline-1 outline-[#3a3a3a] outline-offset-2 transition duration-300 ease-in-out hover:outline-2 hover:outline-[#454545]">
+                <img src="assets/minecraft server/EndlessCraft_v3.png" class="pixel-image rounded-xl w-full mb-3 hover:cursor-pointer" onclick="openModal('assets/minecraft server/EndlessCraft_v3.png')">
+                <p class="font-normal text-sm text-[#FAFAFA] mb-2">Endless Craft 3 was the third local hosted server i did. With new sytem improvements from the stuff i learned from Endless Craft 1 and 2.</p>
+                <p class="font-normal text-sm text-[#FAFAFA] mb-1">Informations:</p>
+                <div class="bg-[#1e1e1e] mt-2 mb-2 rounded-2xl p-4 sm:p-5 outline outline-1 outline-[#3a3a3a] outline-offset-2 transition duration-300 ease-in-out hover:outline-2 hover:outline-[#454545]">
+                    <div class="overflow-x-auto">
+                        <table class="table-auto text-sm text-[#FAFAFA] min-w-full">
+                            <tbody>
+                                <tr>
+                                    <td class="px-3 py-1 text-[#9a9a9a] whitespace-nowrap">server system</td>
+                                    <td class="px-3 py-1"><a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://fabricmc.net/" target="_blank">Fabrc</a></td>
+                                </tr>
+                                <tr class="border-t border-[#3a3a3a]">
+                                    <td class="px-3 py-1 text-[#9a9a9a] whitespace-nowrap">minecraft version</td>
+                                    <td class="px-3 py-1">1.21.8</td>
+                                </tr>
+                                <tr class="border-t border-[#3a3a3a]">
+                                    <td class="px-3 py-1 text-[#9a9a9a] whitespace-nowrap align-top pt-1">mods</td>
+                                    <td class="px-3 py-1">
+                                        <div class="flex flex-col gap-1">
+                                            <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/simple-voice-chat" target="_blank">Simple Voice Chat</a>
+                                            <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/chunky" target="_blank">Chunky</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="border-t border-[#3a3a3a]">
+                                    <td class="px-3 py-1 text-[#9a9a9a] whitespace-nowrap">player</td>
+                                    <td class="px-3 py-1">--</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p class="font-normal text-sm text-[#FAFAFA] mb-2">I switshed the server system from <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://craftycontrol.com/" target="_blank">Crafty Controller</a> to <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://pterodactyl.io/" target="_blank">Pterodactyl</a>. </p>
+                <p class="font-normal text-sm text-[#FAFAFA]">I wantet to test Pterodactyl because i saw that the most biger hoster use it. But to work again agenst lag i used <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/chunky" target="_blank">Chunky</a> mod to pregenerate chunks. Also this time we wantet to make a special edition of Endless Craft so i thougt that a other world generation would be fun and i endet up with useing <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/datapack/lithosphere" target="_blank">Lithosphere</a> along with <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/datapack/still-life" target="_blank">Still Live</a>. </p>
+                <details open>
+                    <summary class="font-normal text-sm text-[#FAFAFA] cursor-pointer mb-2">Map</summary>
+                    <img
+                        class="pixel-image rounded-xl w-full hover:cursor-pointer mt-2 mb-4"
+                        src=""
+                        onclick="openModal('assets/minecraft server/Map v2.png')">
+                </details>
+                <div class="bg-[#1e1e1e] mt-2 mb-2 rounded-2xl p-4 sm:p-5 outline outline-1 outline-[#3a3a3a] outline-offset-2 transition duration-300 ease-in-out hover:outline-2 hover:outline-[#454545]">
+                    <details open>
+                        <summary class="font-normal text-sm text-[#FAFAFA] cursor-pointer mb-2">Players</summary>
+                        <img
+                            class="pixel-image rounded-xl w-full hover:cursor-pointer mt-2 mb-4"
+                            src=""
+                            onclick="openModal('assets/minecraft server/EndlessCraft2Players.png')">
+                </details>
+                </div>
+                <p class="font-normal text-center text-sm text-[#FAFAFA]">03.10.2026 - now</p>
+            </div>
+
+            <div class="bg-[#303030] mt-6 mb-2 rounded-2xl flex flex-col p-5 shadow-xl outline outline-1 outline-[#3a3a3a] outline-offset-2 transition duration-300 ease-in-out hover:outline-2 hover:outline-[#454545]">
+                <img src="assets/minecraft server/Endless Craft2.png" class="pixel-image rounded-xl w-full mb-3 hover:cursor-pointer" onclick="openModal('assets/minecraft server/Endless Craft2.png')">
+                <p class="font-normal text-sm text-[#FAFAFA] mb-2">Endless Craft 2 was the second local hosted server i did. With new improvements from the stuff i learned from Endless Craft 1.</p>
+                <p class="font-normal text-sm text-[#FAFAFA] mb-1">Informations:</p>
+                <div class="bg-[#1e1e1e] mt-2 mb-2 rounded-2xl p-4 sm:p-5 outline outline-1 outline-[#3a3a3a] outline-offset-2 transition duration-300 ease-in-out hover:outline-2 hover:outline-[#454545]">
+                    <div class="overflow-x-auto">
+                        <table class="table-auto text-sm text-[#FAFAFA] min-w-full">
+                            <tbody>
+                                <tr>
+                                    <td class="px-3 py-1 text-[#9a9a9a] whitespace-nowrap">server system</td>
+                                    <td class="px-3 py-1"><a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://purpurmc.org/" target="_blank">Purpur</a></td>
+                                </tr>
+                                <tr class="border-t border-[#3a3a3a]">
+                                    <td class="px-3 py-1 text-[#9a9a9a] whitespace-nowrap">minecraft version</td>
+                                    <td class="px-3 py-1">1.21.10</td>
+                                </tr>
+                                <tr class="border-t border-[#3a3a3a]">
+                                    <td class="px-3 py-1 text-[#9a9a9a] whitespace-nowrap align-top pt-1">plugins</td>
+                                    <td class="px-3 py-1">
+                                        <div class="flex flex-col gap-1">
+                                            <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/simple-voice-chat" target="_blank">Simple Voice Chat</a>
+                                            <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://www.spigotmc.org/resources/sleep-most-1-8-1-21-x-the-most-advanced-sleep-plugin-available-percentage-animations.60623/" target="_blank">Sleep most</a>
+                                            <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/gsit" target="_blank">GSit</a>
+                                            <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/head-drop" target="_blank">Head Drop</a>
+                                            <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/chunky" target="_blank">Chunky</a>
+                                            <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/chunkyborder" target="_blank">ChunkyBorder</a>
+                                            <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/no-creeper-craters" target="_blank">No Creeper Craters</a>
+                                            <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/openinv" target="_blank">OpenInv</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="border-t border-[#3a3a3a]">
+                                    <td class="px-3 py-1 text-[#9a9a9a] whitespace-nowrap">player</td>
+                                    <td class="px-3 py-1">18</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p class="font-normal text-sm text-[#FAFAFA] mb-2">With the exerion from the first time i again used <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://craftycontrol.com/" target="_blank">Crafty Controller</a> along with <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/simple-voice-chat" target="_blank">Simple Voice Chat</a>. </p>
+                <p class="font-normal text-sm text-[#FAFAFA]">We experionst some lag last time so this time i pregenerated some chunks with the <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/chunky" target="_blank">Chunky</a> plugin. To better work agenst cheating i alsow added <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/openinv" target="_blank">OpenInv</a> to check the player inventorys wen something is suspisius.</p>
+                <details open>
+                    <summary class="font-normal text-sm text-[#FAFAFA] cursor-pointer mb-2">Map</summary>
+                    <img
+                        class="pixel-image rounded-xl w-full hover:cursor-pointer mt-2 mb-4"
+                        src="assets/minecraft server/Map v2.png"
+                        onclick="openModal('assets/minecraft server/Map v2.png')">
+                </details>
+                <div class="bg-[#1e1e1e] mt-2 mb-2 rounded-2xl p-4 sm:p-5 outline outline-1 outline-[#3a3a3a] outline-offset-2 transition duration-300 ease-in-out hover:outline-2 hover:outline-[#454545]">
+                    <details open>
+                        <summary class="font-normal text-sm text-[#FAFAFA] cursor-pointer mb-2">Players</summary>
+                        <img
+                            class="pixel-image rounded-xl w-full hover:cursor-pointer mt-2 mb-4"
+                            src="assets/minecraft server/EndlessCraft2Players.png"
+                            onclick="openModal('assets/minecraft server/EndlessCraft2Players.png')">
+                </details>
+                </div>
+                <p class="font-normal text-center text-sm text-[#FAFAFA]">22.03.2026 - 14.04.2026</p>
+            </div>
+
+            <div class="bg-[#303030] mt-6 mb-2 rounded-2xl flex flex-col p-5 shadow-xl outline outline-1 outline-[#3a3a3a] outline-offset-2 transition duration-300 ease-in-out hover:outline-2 hover:outline-[#454545]">
+                <img
+                    src="assets/minecraft server/Endless Craft1.png"
+                    class="pixel-image rounded-xl w-full mb-3 hover:cursor-pointer"
+                    onclick="openModal('assets/minecraft server/Endless Craft1.png')">
+                <p class="font-normal text-sm text-[#FAFAFA] mb-2">Endless Craft 1 was the first local hosted server i did.</p>
+                <p class="font-normal text-sm text-[#FAFAFA] mb-1">Informations:</p>
+                <div class="bg-[#1e1e1e] mt-2 mb-2 rounded-2xl p-4 sm:p-5 outline outline-1 outline-[#3a3a3a] outline-offset-2 transition duration-300 ease-in-out hover:outline-2 hover:outline-[#454545]">
+                    <div class="overflow-x-auto">
+                        <table class="table-auto text-sm text-[#FAFAFA] min-w-full">
+                            <tbody>
+                                <tr>
+                                    <td class="px-3 py-1 text-[#9a9a9a] whitespace-nowrap">server system</td>
+                                    <td class="px-3 py-1"><a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://papermc.io/" target="_blank">Paper</a></td>
+                                </tr>
+                                <tr class="border-t border-[#3a3a3a]">
+                                    <td class="px-3 py-1 text-[#9a9a9a] whitespace-nowrap">minecraft version</td>
+                                    <td class="px-3 py-1">1.21.8</td>
+                                </tr>
+                                <tr class="border-t border-[#3a3a3a]">
+                                    <td class="px-3 py-1 text-[#9a9a9a] whitespace-nowrap align-top pt-1">plugins</td>
+                                    <td class="px-3 py-1">
+                                        <div class="flex flex-col gap-1">
+                                            <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/simple-voice-chat" target="_blank">Simple Voice Chat</a>
+                                            <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://www.spigotmc.org/resources/sleep-most-1-8-1-21-x-the-most-advanced-sleep-plugin-available-percentage-animations.60623/" target="_blank">Sleep most</a>
+                                            <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/gsit" target="_blank">GSit</a>
+                                            <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/head-drop" target="_blank">Head Drop</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="border-t border-[#3a3a3a]">
+                                    <td class="px-3 py-1 text-[#9a9a9a] whitespace-nowrap">player</td>
+                                    <td class="px-3 py-1">12</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p class="font-normal text-sm text-[#FAFAFA] mb-2">I set all of this up in <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://craftycontrol.com/" target="_blank">Crafty Controller</a>. It took a while until I got <a class="font-black hover:text-[#8FCFFA] transition-colors" href="https://modrinth.com/plugin/simple-voice-chat" target="_blank">Simple Voice Chat</a> running but everything worked out fine.</p>
+                <p class="font-normal text-sm text-[#FAFAFA] mb-2">My friends and I then played on the server for 3 weeks. We built great stuff and had much fun playing.</p>
+                <details open>
+                    <summary class="font-normal text-sm text-[#FAFAFA] cursor-pointer mb-2">Map</summary>
+                    <img
+                        class="pixel-image rounded-xl w-full hover:cursor-pointer mt-2 mb-4"
+                        src="assets/minecraft server/Map v1.png"
+                        onclick="openModal('assets/minecraft server/Map v1.png')">
+                </details>
+                <p class="font-normal text-center text-sm text-[#FAFAFA]">07.11.2025 - 08.12.2025</p>
+            </div>
+        </main>
+
+        <!-- modal -->
+        <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50" onclick="handleBackdropClick(event)">
+            <div class="relative flex items-center justify-center w-full h-full overflow-hidden" id="modalContainer">
+                <!-- close button -->
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-3xl font-bold z-20 hover:text-[#27A3F5] transition-colors leading-none">&times;</button>
+                <!-- zoom hint -->
+                <p id="zoomHint" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-[#9a9a9a] text-xs z-20 pointer-events-none">scroll to zoom · drag to pan</p>
+                <!-- image wrapper for panning -->
+                <div id="imageWrapper" class="relative overflow-hidden w-full h-full flex items-center justify-center">
+                    <img id="modalImage" src="" class="pixel-image max-w-[85vw] max-h-[85vh] w-auto h-auto object-contain rounded-xl select-none" />
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const MIN_SCALE = 1;
+            const MAX_SCALE = 10;
+
+            let scale = 1;
+            let tx = 0, ty = 0;
+            let isDragging = false;
+            let dragStartX, dragStartY;
+
+            // RAF batching — GPU gets the transform once per frame
+            let rafPending = false;
+            function scheduleRender() {
+                if (rafPending) return;
+                rafPending = true;
+                requestAnimationFrame(() => {
+                    rafPending = false;
+                    const img = document.getElementById("modalImage");
+                    img.style.transform = `translate3d(${tx}px, ${ty}px, 0) scale(${scale})`;
+                    img.classList.toggle("zoomed", scale > 1);
+                });
+            }
+
+            // Zoom toward screen point (cx, cy).
+            // With transform-origin: center center, the image natural center is always
+            // at (window.innerWidth/2, window.innerHeight/2). tx/ty are offsets from that.
+            // So the image-local coordinate of a screen point (cx, cy) is:
+            //   imgX = (cx - modalCenterX - tx) / scale
+            // After zoom to newScale, we want imgX to still be under (cx, cy):
+            //   newTx = cx - modalCenterX - imgX * newScale
+            function zoomAt(cx, cy, newScale) {
+                newScale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, newScale));
+                const mcx = window.innerWidth  / 2;
+                const mcy = window.innerHeight / 2;
+                const imgX = (cx - mcx - tx) / scale;
+                const imgY = (cy - mcy - ty) / scale;
+                tx = cx - mcx - imgX * newScale;
+                ty = cy - mcy - imgY * newScale;
+                scale = newScale;
+                if (scale <= MIN_SCALE) { tx = 0; ty = 0; scale = MIN_SCALE; }
+                scheduleRender();
+            }
+
+            function openModal(src) {
+                const modal = document.getElementById("imageModal");
+                const img = document.getElementById("modalImage");
+                scale = 1; tx = 0; ty = 0;
+                img.style.transform = "translate3d(0,0,0) scale(1)";
+                img.classList.remove("zoomed");
+                modal.classList.remove("hidden");
+                document.body.style.overflow = "hidden";
+                img.src = src;
+            }
+
+            function closeModal() {
+                document.getElementById("imageModal").classList.add("hidden");
+                document.body.style.overflow = "";
+            }
+
+            function handleBackdropClick(e) {
+                if (e.target === document.getElementById("imageModal")) closeModal();
+            }
+
+            // --- Mouse wheel: zoom toward cursor ---
+            document.getElementById("imageModal").addEventListener("wheel", function(e) {
+                e.preventDefault();
+                const factor = e.deltaY < 0 ? 1.15 : 1 / 1.15;
+                zoomAt(e.clientX, e.clientY, scale * factor);
+            }, { passive: false });
+
+            // --- Mouse drag: pan ---
+            const modal = document.getElementById("imageModal");
+            modal.addEventListener("mousedown", function(e) {
+                if (scale <= 1) return;
+                isDragging = true;
+                dragStartX = e.clientX - tx;
+                dragStartY = e.clientY - ty;
+                e.preventDefault();
+            });
+            window.addEventListener("mousemove", function(e) {
+                if (!isDragging) return;
+                tx = e.clientX - dragStartX;
+                ty = e.clientY - dragStartY;
+                scheduleRender();
+            });
+            window.addEventListener("mouseup", () => isDragging = false);
+
+            // --- Touch: pinch-to-zoom toward midpoint + pan ---
+            let lastTouchDist = null;
+            let lastMidX = 0, lastMidY = 0;
+
+            modal.addEventListener("touchstart", function(e) {
+                if (e.touches.length === 2) {
+                    lastTouchDist = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY
+                    );
+                    lastMidX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+                    lastMidY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+                } else if (e.touches.length === 1 && scale > 1) {
+                    dragStartX = e.touches[0].clientX - tx;
+                    dragStartY = e.touches[0].clientY - ty;
+                }
+            }, { passive: true });
+
+            modal.addEventListener("touchmove", function(e) {
+                if (e.touches.length === 2) {
+                    e.preventDefault();
+                    const dist = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY
+                    );
+                    const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+                    const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+
+                    if (lastTouchDist) {
+                        // zoom toward pinch midpoint
+                        const ratio = dist / lastTouchDist;
+                        zoomAt(midX, midY, scale * ratio);
+                        // also pan by midpoint movement
+                        tx += midX - lastMidX;
+                        ty += midY - lastMidY;
+                        scheduleRender();
+                    }
+                    lastTouchDist = dist;
+                    lastMidX = midX;
+                    lastMidY = midY;
+                } else if (e.touches.length === 1 && scale > 1) {
+                    tx = e.touches[0].clientX - dragStartX;
+                    ty = e.touches[0].clientY - dragStartY;
+                    scheduleRender();
+                }
+            }, { passive: false });
+
+            modal.addEventListener("touchend", function(e) {
+                if (e.touches.length < 2) lastTouchDist = null;
+            });
+
+            // ESC to close
+            document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+        </script>
+    </body>
+</html>
